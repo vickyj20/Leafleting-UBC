@@ -46,7 +46,7 @@
     // load GeoJSON from a file on the web
     // $ is jQuery.
     
-    var fields ={
+    var Field ={
      "type": "Feature",
     "properties": {"NAME": "SURFACE_TYPE"},
     "geometry": {
@@ -65,9 +65,10 @@ $.getJSON("https://raw.githubusercontent.com/UBCGeodata/ubcv-landscape/master/ge
      function(data){
     	// Once UBC trees GeoJSON layer is loaded
       	// Then add it to the map 
- L.geoJSON(data).addTo(map);
+ L.geoJSON(data, {
+	 onEachFeature: onEachField
     }
-    );
+    ).addTo(map);}):
     
 
  	   
