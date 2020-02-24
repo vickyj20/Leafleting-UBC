@@ -52,18 +52,22 @@
     "geometry": {
         "type": "Polygon",
 		};
+	function onEachField(feature, layer) {
+       // does this tree have a property named TAXA?
+       if (feature.properties && feature.properties.NAME && feature.propteries.SURFACE_TYPE) {
+          layer.bindTooltip(feature.properties.NAME && feature.properties.SURFACE_TYPE);
+       }
+    }    
+
    
     
 $.getJSON("https://raw.githubusercontent.com/UBCGeodata/ubcv-landscape/master/geojson/ubcv_fields.geojson",
      function(data){
     	// Once UBC trees GeoJSON layer is loaded
       	// Then add it to the map 
- L.geoJSON(data, {
-    style: function(feature) {
-        color: "#ff0000"};
-        }
+ L.geoJSON(data).addTo(map);
     }
-}).addTo(map);
+    );
     
 
  	   
