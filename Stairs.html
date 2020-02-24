@@ -51,20 +51,14 @@
     "geometry": {
         "type": "Polygon",
 		};
-    
-    function onEachfeature (feature, layer) {
-       // does this tree have a property named TAXA?
-       if (feature.properties && feature.properties.address) {
-          layer.bindTooltip(feature.properties.address);
-       }
-    }
+   
     
 $.getJSON("https://raw.githubusercontent.com/UBCGeodata/ubcv-landscape/master/geojson/ubcv_stairs.geojson",
      function(data){
     	// Once UBC trees GeoJSON layer is loaded
       	// Then add it to the map 
- L.geoJSON(feature, {
-    style: function(polygon) {
+ L.geoJSON(stairs, {
+    style: function(feature) {
         color: "#ff0000"};
         }
     }
