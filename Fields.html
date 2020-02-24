@@ -10,7 +10,8 @@
 
 	<!-- jQuery is a library that simplifies many things in JavaScript. 
 	     We'll use it to retrieve data from the web. -->   
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>	
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
 	
 </head>
 <body>
@@ -45,19 +46,19 @@
     // load GeoJSON from a file on the web
     // $ is jQuery.
     
-    var stairs ={
+    var fields ={
      "type": "Feature",
-    "properties": {"name": "address"},
+    "properties": {"NAME": "SURFACE_TYPE"},
     "geometry": {
         "type": "Polygon",
 		};
    
     
-$.getJSON("https://raw.githubusercontent.com/UBCGeodata/ubcv-landscape/master/geojson/ubcv_stairs.geojson",
+$.getJSON("https://raw.githubusercontent.com/UBCGeodata/ubcv-landscape/master/geojson/ubcv_fields.geojson",
      function(data){
     	// Once UBC trees GeoJSON layer is loaded
       	// Then add it to the map 
- L.geoJSON(stairs, {
+ L.geoJSON(data, {
     style: function(feature) {
         color: "#ff0000"};
         }
