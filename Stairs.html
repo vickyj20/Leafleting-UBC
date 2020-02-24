@@ -45,7 +45,7 @@
     // load GeoJSON from a file on the web
     // $ is jQuery.
     
-    var stairs = {
+    var stairs ={
      "type": "Feature",
     "properties": {"name": "address"},
     "geometry": {
@@ -63,8 +63,8 @@ $.getJSON("https://raw.githubusercontent.com/UBCGeodata/ubcv-landscape/master/ge
      function(data){
     	// Once UBC trees GeoJSON layer is loaded
       	// Then add it to the map 
- L.geoJSON(stairs, {
-    style: function(feature) {
+ L.geoJSON(feature, {
+    style: function(polygon) {
         color: "#ff0000"};
         }
     }
