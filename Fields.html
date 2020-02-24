@@ -65,7 +65,7 @@ $.getJSON("https://raw.githubusercontent.com/UBCGeodata/ubcv-landscape/master/ge
  
 function onEachField (feature, layer) {
 if (feature.properties + feature.properties.NAME + feature.properties.SURFACE_TYPE) {
-	layer.bindTooltip(" NAME: " + feature.properties.NAME + " TYPE: " +  feature.properties.SURFACE_TYPE + " ");
+	layer.bindTooltip("<b> NAME: " + feature.properties.NAME + " <b> TYPE: " +  feature.properties.SURFACE_TYPE + " ");
 }
     }
  	   
