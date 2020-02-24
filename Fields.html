@@ -57,9 +57,14 @@ $.getJSON("https://raw.githubusercontent.com/UBCGeodata/ubcv-landscape/master/ge
       	// Then add it to the map 
  L.geoJSON(data){
 	 onEachFeature: onEachField
-}) .addTo(map);});
+}).addTo(map);});
     
-
+ 
+    function onEachField (feature, layer) {
+if (feature.properties.NAME && feature.properties.SURFACE_TYPE) {
+	layer.bindTooltip(feature.properties.NAME && feature.properties.SURFACE_TYPE);
+}
+    }
  	   
   </script>
 
