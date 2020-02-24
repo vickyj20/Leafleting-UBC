@@ -43,7 +43,7 @@
     //              ).addTo(map);
  
     function onEachField (feature, layer) {
-if (feature.properties && feature.properties.NAME && feature.properties.SURFACE_TYPE) {
+if (feature.properties.NAME && feature.properties.SURFACE_TYPE) {
 	layer.bindTooltip(feature.properties.NAME && feature.properties.SURFACE_TYPE);
 }
     }
