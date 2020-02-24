@@ -65,10 +65,9 @@ $.getJSON("https://raw.githubusercontent.com/UBCGeodata/ubcv-landscape/master/ge
      function(data){
     	// Once UBC trees GeoJSON layer is loaded
       	// Then add it to the map 
- L.geoJSON(data, {
-	 onEachFeature: onEachField
-    }
-    ).addTo(map);}):
+ L.geoJSON(data).addTo(map)
+}
+):
     
 
  	   
