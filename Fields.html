@@ -55,13 +55,21 @@ $.getJSON("https://raw.githubusercontent.com/UBCGeodata/ubcv-landscape/master/ge
      function(data){
     	// Once UBC trees GeoJSON layer is loaded
       	// Then add it to the map 
- L.geoJSON(data){
+ L.geoJSON(data, {
+	 pointToLayer: function (feature, latlng) {
+		 return L.circleMarker(
+			 latlng, 
+			 FieldMarkerOptions);
+	 }, 
 	 onEachFeature: onEachField
-}).addTo(map);});
+ }
+	  ).addTo(map);
+}
+	 );
     
  
-    function onEachField (feature, layer) {
-if (feature.properties.NAME && feature.properties.SURFACE_TYPE) {
+function onEachField (feature, layer) {
+if (feature.properties && feature.properties.NAME && feature.properties.SURFACE_TYPE) {
 	layer.bindTooltip(feature.properties.NAME && feature.properties.SURFACE_TYPE);
 }
     }
