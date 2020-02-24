@@ -38,9 +38,10 @@
 			}
 			).addTo(map);
     
-    //var myPoint = L.marker(
-    //                 [49.2660, -123.2562]
-    //              ).addTo(map);
+    var myPoint = L.marker(
+    [49.2660, -123.2562]
+    ).addTo(map);
+	  marker.bindPopUp( "<b> Geography Building </b><br> 984 West Mall, Vancouver, BC V6T 1Z2").openPopUp(); 
  
 
 // load GeoJSON from a file on the web
@@ -65,7 +66,7 @@ $.getJSON("https://raw.githubusercontent.com/UBCGeodata/ubcv-landscape/master/ge
  
 function onEachField (feature, layer) {
 if (feature.properties + feature.properties.NAME + feature.properties.SURFACE_TYPE) {
-	layer.bindTooltip("<b> NAME: " + </b><br> feature.properties.NAME + " TYPE: " + feature.properties.SURFACE_TYPE + " ");
+	layer.bindTooltip(" NAME: " + feature.properties.NAME + " TYPE: " + feature.properties.SURFACE_TYPE + " ");
 }
     }
  	   
