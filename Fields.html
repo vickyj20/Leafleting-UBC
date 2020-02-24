@@ -38,8 +38,6 @@
 			}
 			).addTo(map);
 	 
-    var marker = L.marker([49.2660, -123.2562]).addTo(map);
-	marker.bindPopup("<b> Geography Building </b><br> 984 West Mall, Vancouver, BC V6T 1Z2").openPopUp(); 
 
 // load GeoJSON from a file on the web
     // $ is jQuery.
@@ -59,6 +57,9 @@ $.getJSON("https://raw.githubusercontent.com/UBCGeodata/ubcv-landscape/master/ge
 	  ).addTo(map);
 }
 	 );
+
+var marker = L.marker([49.2660, -123.2562]).addTo(map);
+	marker.bindPopup("<b> Geography Building </b><br> 984 West Mall, Vancouver, BC V6T 1Z2").openPopUp(); 
     
  
 function onEachField (feature, layer) {
