@@ -46,18 +46,7 @@
     // load GeoJSON from a file on the web
     // $ is jQuery.
     
-    var Field ={
-     "type": "Feature",
-    "properties": {"NAME": "SURFACE_TYPE"},
-    "geometry": {
-        "type": "Polygon",
-		};
-	function onEachField(feature, layer) {
-       // does this tree have a property named TAXA?
-       if (feature.properties && feature.properties.NAME && feature.propteries.SURFACE_TYPE) {
-          layer.bindTooltip(feature.properties.NAME && feature.properties.SURFACE_TYPE);
-       }
-    }    
+ 
 
    
     
@@ -65,9 +54,9 @@ $.getJSON("https://raw.githubusercontent.com/UBCGeodata/ubcv-landscape/master/ge
      function(data){
     	// Once UBC trees GeoJSON layer is loaded
       	// Then add it to the map 
- L.geoJSON(data).addTo(map)
+ L.geoJSON(data).addTo(map);
 }
-):
+);
     
 
  	   
